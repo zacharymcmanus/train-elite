@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- {% load static %} -->
+    <link rel="stylesheet" href="{% static 'first_app/css/login.css' %}">
+</head>
+<body>
+    <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">Log In</h2>
+                    <form method="POST" action="/user/login">
+                    {% csrf_token %}
+                        <div class="input-group">
+                            <input class="input--style-3" type="email" placeholder="Email" name="email">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="password" placeholder="Password" name="password">
+                        </div>
+                        <div class="p-t-10">
+                            <button class="btn btn--pill btn--green" type="submit">Sign In</button>
+                        </div>
+                    </form>
+                    <p class="problemtext">Dont have an account yet? <a href="/signuppage" class="signuplink">Sign up here.</a></p>
+                    <p class="problemtext"><a href="" class="forgotpw">Forgot passsword?</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+* {
+    font-family: 'Spectral', serif;
+}
+.content {
+    height: 100%;
+    width: 100%;
+    margin: 0px auto;
+}
+/* Nav Bar */
+.nav-link {
+    color: white!important;
+}
+.nav > li > a:focus, 
+.nav > li > a:hover
+{
+    color: #fec503!important;
+}
+.active {
+    color: #fec503!important;
+}
+.nav-title {
+    font-family: 'Kaushan Script', cursive;
+    color: #fec503!important;
+}
+.navbar-light {
+    background: #333!important;
+    color: pink!important;
+}
+.navbar-logo {
+    height: 24px;
+    width: 28px;
+    padding-right: 6px;
+    padding-bottom: 2px;
+}
+/* Body */
+.container {
+    margin-top: 20px;
+    overflow: auto;
+}
+.column-title {
+    font-family: 'Kaushan Script', cursive;
+    color: #53b6d0!important;
+    font-weight: bold;
+}
+.list-group-item {
+    margin-top: 10px;
+    color: black;
+}
+.btn-primary {
+    background-color: #53b6d0!important;
+    border: none;
+}
+.list-group {
+    overflow: scroll!important;
+}
+/* Footer */
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: white;
+    text-align: center;
+}

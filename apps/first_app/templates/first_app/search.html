@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Search</title>
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css"
+      type="text/css"
+      media="all"
+    />
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"
+      type="text/javascript"
+    ></script>
+  </head>
+  <body>
+    <h3>Search</h3>
+    <form action="/search/workouts" method="POST">
+      {% csrf_token %}
+      <input
+        type="”text”"
+        class="”form-control”"
+        name="srh"
+        placeholder="Search database..."
+      />
+      <input type="submit" value="Search" />
+    </form>
+
+    <div class="messages">
+      {% if messages %} {% for message in messages %}
+      {{ message }}
+      {% endfor %} {% endif %}
+    </div>
+
+    <div class="workouts">
+      {% for workout in sr %} {% if user.id == workout.creator_id %}
+      <h4>Workout Name: {{ workout.name }}</h4>
+      <li>Description: {{ workout.description }}</li>
+      <li>Repetitions: {{ workout.repetitions }}</li>
+      <li>Weight: {{ workout.weight }}</li>
+      <li>Time: {{ workout.time }}</li>
+      <li>Date: {{ workout.created_at }}</li>
+
+      {% endif %} {% endfor %}
+    </div>
+
+    <!-- <script type="text/javascript">
+        $('form').submit(function(e){
+            e.preventDefault()
+            $.ajax({ 
+                url: "/searchworkouts",
+                method: 'post',
+                data: $(this).serialize(),
+                success: function (serverResponse) {
+                    $('.posts').html(serverResponse)
+                }
+            })
+        })
+    </script> -->
+
+    <button class="apireq">AJAX!</button>
+    <script>
+      $(".apireq").click(function() {
+        $.ajax({
+          type: "GET",
+          url:
+            "https://api.edamam.com/api/food-database/parser?ingr=red%20apple&app_id=f64d03be&app_key=1558e6f1aaf5d8de3c67bbe3595621b9",
+          dataType: "json",
+          success: function(data) {
+            $("#fat").text(data["parsed"][0]["food"]["nutrients"]["FAT"]);
+            console.log("got nutrients!", data);
+          }
+        });
+      });
+    </script>
+    <div id="jsonresp">
+      <h4>AJAX Results</h4>
+      <p id="fat"></p>
+    </div>
+  </body>
+</html>

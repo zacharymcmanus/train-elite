@@ -1,0 +1,58 @@
+* {
+  font-family: 'Spectral', sans-serif;
+  color: black;
+}
+body {
+    padding-top: 3 rem;
+    padding-bottom: 3rem;
+    color: #5a5a5a;
+}
+.body-img {
+  height: 500px;
+  width: 500px;
+  justify-content: right;
+  display: inline-block;
+}
+.headline-image {
+  background-image: url("https://i.imgur.com/ujjoN2N.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+}
+.header-title {
+  font-family: 'Kaushan Script', cursive;
+  color: #53b6d0!important;
+  z-index: 1;
+}
+.header-question {
+  font-family: 'Kaushan Script', cursive;
+  color: #53b6d0!important;
+  font-size: 1.0rem!important;
+}
+.btn-primary {
+  background-color: #53b6d0!important;
+}
+.nav-title {
+  font-family: 'Kaushan Script', cursive;
+}
+.navbar-logo {
+  height: 24px;
+  width: 28px;
+  padding-right: 6px;
+  padding-bottom: 2px;
+}
+.nav-button {
+  margin-right: 5px;
+}
+.card-deck {
+  margin-top: 16px;
+}
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}

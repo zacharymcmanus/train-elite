@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Track Train</title>
+    <link rel="icon" href="https://png.icons8.com/ios/1600/exercise.png">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <!-- Load Static Files -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'first_app/css/index.css' %}">
+</head>
+<body>
+    <!-- NavBar -->
+    <div class="wrapper">
+        <header>
+            <nav>
+                <div class="menu-icon">
+                    <i class="fa fa-bars fa-1x"></i>
+                </div>
+                <div class="logo">
+                    TrainElite
+                    <img class="runninglogo" src="https://png.icons8.com/ios/1600/exercise.png">
+                </div>
+                <div class="menu"> 
+                    <ul>
+                        <li>
+                            <div class="button_cont" align="center"><a class="example_a" href="/loginpage">LOG IN</a></div>
+                        </li>
+                        <li>
+                            <div class="button_cont" align="center"><a class="example_a" href="/loginpage">SIGN UP</a></div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div>
+                <h3 class="centered-title">Fitness starts with what you eat.</h3>
+                <div class="button_cont" align="center"><a class="example_c" href="/signuppage">START FOR FREE</a></div>
+            </div>
+        </header>
+        <div class="content">
+            <div id="container">
+                <div class="advantages">
+                    <h2>YOUR ADVANTAGES</h2>
+                    <h3>TrainElite is the all-in-one place to track your daily workouts and nutrition. Track your workouts easily to stay consistent with your training! Log all your nutrition to stay on track and see the results you want!</h3>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="block">
+                            <i class="fas fa-dumbbell"></i>
+                            <h3>Workouts</h3>
+                            <p>You can create and manage flexible workout routines for any goals you have. Select exactly which exercises you'll do and how many repetitions, time or distance you want to do them. You can also combine different workouts into a schedule.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="block">
+                            <i class="fas fa-utensils"></i>
+                            <h3>Nutrition</h3>
+                            <p>Fitness starts with what you eat on a daily basis. Create your personal diet plan by creating as many meals with as many different ingredients as you need. The application will calculate the nutritional values (total energy, protein, carbohydrates, and so on) about the whole plan as well as the indivual meals.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="block">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Diary</h3>
+                            <p>Enter the weights and repetitions you did for each exercise to generate diagrams that let you see at a glance how well you are doing. The raw numbers are of course still accessible. You can also enter notes and a general impression (great, neutral, etc.)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+            <div class="col-md-4">
+                <span class="copyright">Copyright &copy; TrainElite 2019</span>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline social-buttons">
+                <li class="list-inline-item">
+                    <a href="#">
+                    <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#">
+                    <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline quicklinks">
+                <li class="list-inline-item">
+                    <a href="#">Privacy Policy</a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#">Terms of Use</a>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
+

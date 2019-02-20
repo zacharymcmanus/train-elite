@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>View Workout</title>
+    <link rel="icon" href="https://png.icons8.com/ios/1600/exercise.png">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- Load Static CSS -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'first_app/css/viewworkout.css' %}">
+</head>
+<body>
+    <!-- Nav Bar  -->
+    <nav class="navbar navbar-light navbar-expand-md bg-faded justify-content-center">
+        <a href="/dashboard" class="navbar-brand d-flex w-50 mr-auto nav-title">TrainElite</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+            <ul class="navbar-nav w-100 justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/workouts"><i class="fas fa-dumbbell"></i> Workouts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/nutrition"><i class="fas fa-utensils"></i> Nutrition</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/weight"><i class="fas fa-balance-scale"></i> Weight</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="/account/edit"><i class="fas fa-user-circle"></i> Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Body -->
+    <div class="container">
+        <h3 class="column-title text-center">Workout - {{workout.name}}</h3>
+        <hr>
+        <!-- View Workout-->
+        <div class="jumbotron">
+                <li>Description: {{workout.description}}</li>
+                <li>Weight: {{workout.weight}}</li>
+                <li>Repetitions: {{workout.repetitions}}</li>
+                <li>Time: {{workout.time}}</li>
+        </div>
+        <div class="btn-toolbar justify-content-center">
+            <!-- Edit Workout Modal-->
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Edit Workout</button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 id="modaltext" class="modal-title" id="exampleModalLabel">Edit Workout</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/workout/edit/{{workout.id}}" method="POST">
+                                {% csrf_token %}
+                                    <input class="form-control" type="text" name="name" placeholder="Name" value="{{workout.name}}"><br>
+                                    <input class="form-control" type="text" name="description" placeholder="Description" value="{{workout.description}}"><br>
+                                    <input class="form-control" type="text" name="weight" placeholder="Weight" value="{{workout.weight}}"><br>
+                                    <input class="form-control" type="text" name="repetitions" placeholder="Repetitions" value="{{workout.repetitions}}"><br>
+                                    <input class="form-control" type="text" name="time" placeholder="Time" value="{{workout.time}}"><br>
+                                    <input type="hidden" name="creator" value="{{user.id}}"  
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Update Workout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="/workout/delete/{{workout.id}}" class="btn btn-danger">Delete Workout</a>
+        </div>
+    </div>
+     <!-- Footer -->
+     <div class="footer">
+        &copy; 2018-2019 TrainElite, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
+    </div>
+</body>
+</html>

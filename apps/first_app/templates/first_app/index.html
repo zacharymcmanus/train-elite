@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TrainElite</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'first_app/css/index.css' %}">
+    <link rel="icon" href="https://png.icons8.com/ios/1600/exercise.png">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Nav Bar -->
+  <div class="container">
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <h5 class="my-0 mr-md-auto font-weight-normal nav-title">TrainElite</h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="#">FEATURES</a>
+        <a class="p-2 text-dark" href="#">BLOG</a>
+      </nav>
+      <a class="btn btn-warning nav-button" href="/register">SIGN UP</a>
+      <a class="btn btn-outline-warning" href="/login">LOG IN</a>
+    </div>
+  </div>
+
+  <!-- Headline -->
+    <div class="container">
+      <div class="position-relative overflow-hidden text-center bg-light headline-image">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+          <h1 class="display-6 font-weight-bold header-title">Welcome to TrainElite!</h1>
+          <p class="lead font-weight-normal header-question">Ready to take your performance to the next level?</p>
+          <a class="btn btn-primary" href="#">SIGN UP NOW</a>
+        </div>
+        <div class="product-device shadow-sm d-none d-md-block"></div>
+        <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+      </div>
+    </div>
+
+  <!-- 3 Info Cards -->
+  <div class="container">
+    <div class="card-deck mb-3 text-center content">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+          <i class="fas fa-dumbbell"></i>
+          <h4 class="my-0 font-weight-normal">Workouts</h4>
+        </div>
+        <div class="card-body">
+          <p>You can create and manage flexible workout routines for any goals you have. Select exactly which exercises you'll do and how many repetitions, time or distance you want to do them. You can also combine different workouts into a schedule.</p>
+        </div>
+      </div>
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+          <i class="fas fa-utensils"></i>
+          <h4 class="my-0 font-weight-normal">Nutrition</h4>
+        </div>
+        <div class="card-body">
+          <p>Fitness starts with what you eat on a daily basis. Create your personal diet plan by creating as many meals with as many different ingredients as you need. The application will calculate the nutritional values (total energy, protein, carbohydrates, and so on) about the whole plan as well as the indivual meals.</p>
+        </div>
+      </div>
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+          <i class="fas fa-book"></i>
+          <h4 class="my-0 font-weight-normal">Diary</h4>
+        </div>
+        <div class="card-body">
+          <p>Enter the weights and repetitions you did for each exercise to generate diagrams that let you see at a glance how well you are doing. The raw numbers are of course still accessible. You can also enter notes and a general impression (great, neutral, etc.)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer class="container">
+    <p class="float-right"><a href="#">Back to top</a></p>
+    <p>&copy; 2018-2019 TrainElite, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+  </footer>
+
+</body>
+</html>
+  
